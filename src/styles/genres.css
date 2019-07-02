@@ -1,0 +1,121 @@
+.container-fluid{
+    padding: 2%;
+}
+.genres-bar {
+    background: #3a3a3a;
+    padding: 5px 0px;
+}
+
+ul li {
+    display: inline;
+}
+
+button.genre.button {
+    margin: 10px;
+    padding: 10px;
+    background: #3a3a3a;
+    color: white;
+    border: 2px solid white;
+}
+
+button.genre.button.toggled{
+    background: #F44336;
+}
+button.genre.button:focus {
+    outline-color: rgba(255, 255, 255, 0);
+}
+button.button.fetch {
+    margin: 0 auto;
+    display: block;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    background: #9E9E9E;
+    color: white;
+    border: none;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.85);
+}
+button.button.fetch.ready {
+    background: #F44336;
+}
+button.button.fetch.ready:hover {
+    background: #f53426;
+}
+.movie-container {
+    font-family: 'Roboto', sans-serif;
+    min-height: 80vh;
+    background-size: cover;
+    background-position: center center;
+    background-color: #9E9E9E;
+    box-shadow: inset 0 0 0 0 #31302B;
+
+}
+.movie-container.almost{
+    background-color: rgb(255, 152, 144);
+}
+.movie-container h2 {
+    text-align: center;
+    font-size: 28px;
+}
+.movie-container img.poster {
+    max-width: 300px;
+    display: block;
+    float: left;
+    box-shadow: -1px 5px 5px 0px black;
+}
+.title {
+    font-size: 6em;
+    color: white;
+    padding-left: 20px;
+    max-width: 80%;
+}
+.description {
+    color: white;
+    padding-left: 20px;
+    max-width: 50%;
+}
+.movie-item {
+    height: 169px;
+    width: 300px;
+    background-size: cover;
+    float: left;
+    margin: 20px 2%;
+    box-shadow: -2px 2px 1px black;
+    color: transparent;
+    text-align: center;
+    font-size: 18px;
+    position: relative;
+    background: rgba(228, 228, 228, 0.74);    
+}
+.movie-item .movie-title{
+    margin-top:80px;
+    padding: 0 10px;
+}
+.movie-list-wrap{
+    margin-left: -40px;
+}
+.movie-item:hover{
+    color:white;
+}
+.movie-item:hover> .overlay {
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color: rgba(0, 0, 0, 0.70);
+}
+h2 {
+    color: white;
+    margin-top: 50px;
+}
+.poster-wrap{
+    max-width:300px;
+}
+@media screen and (max-width: 991px) {
+    .title{
+        font-size: 3em;
+    }
+}

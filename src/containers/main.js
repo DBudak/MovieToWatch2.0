@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getAPIConfig } from '../actions/actions';
+import Movies from './movies';
 
 class Main extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class Main extends Component {
     render() {
         return (
             <div>
-                    im connected check me out         
+                   <Movies />         
             </div>
         );
     }    
@@ -27,4 +28,4 @@ function mapStateToProps(state){
     }
   }
 
-  export default connect(mapStateToProps)(Main)
+  export default connect(mapStateToProps)(Movies)
