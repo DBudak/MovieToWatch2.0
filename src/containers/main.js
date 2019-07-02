@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getAPIConfig } from '../actions/actions';
 import Movies from './movies';
+import * as actionCreators from '../actions/actions';
+import { bindActionCreators } from 'redux';
 
 class Main extends Component {
     constructor(props) {
@@ -28,4 +30,8 @@ function mapStateToProps(state){
     }
   }
 
-  export default connect(mapStateToProps)(Movies)
+  function mapDispatchToProps(dispatch){
+    return bindActionCreators(actionCreators,dispatch);
+  }
+
+  export default connect(mapStateToProps, mapDispatchToProps)(Movies)

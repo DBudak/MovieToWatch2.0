@@ -12,7 +12,7 @@ class Movies extends Component{
     }
     componentWillMount(){
         console.log('in movies', this.props);
-        this.props.dispatch(getGenres());        
+        this.props.getGenres();        
     }
     getMovies(e){
         this.props.getMovies(this.props.genres.userChoice);
@@ -27,6 +27,17 @@ class Movies extends Component{
     setFeatured(movie){
         this.props.movies.featuredMovieChosen(movie);
     }
+    handleGenreSelect(e) {
+        console.log(e.target.name, 'was clicked');
+        if(e.target.className.includes('toggled')){
+          e.target.className = e.target.className.replace(' toggled','');
+          this.props.genreRemoved(e.target.name);
+        }else{
+            e.target.className = e.target.className + ' toggled';
+          this.props.genreAdded(e.target.name);        
+        }
+        
+    }
     render() {
         //generating a list
         let genreList = '';
@@ -34,9 +45,10 @@ class Movies extends Component{
             console.log('genres received by Movies Component');
             genreList = this.props.genres.data.map((genre, i) => 
                 <li key={genre.id}>
-                    <GenreButton name={genre.name} id={genre.id} 
-                    genreAdded={ this.props.genreAdded } 
-                    genreRemoved={ this.props.genreRemoved }/>
+                    <GenreButton 
+                    name={genre.name} 
+                    id={genre.id} 
+                    onClick={ e => this.handleGenreSelect(e) }/>
                 </li>
             );
             console.log('genreList generated', genreList);
