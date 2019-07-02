@@ -7,12 +7,12 @@ class Main extends Component {
         super(props);
       }
     componentDidMount(){
-        this.props.getAPIConfig();
+
     }
     render() {
         return (
             <div>
-                    im connected             
+                    im connected check me out         
             </div>
         );
     }    
