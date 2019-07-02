@@ -1,9 +1,5 @@
 //Redux
-import { createStore } from 'redux';
-
-//Routing
-import { browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
+import { createStore, applyMiddleware } from 'redux';
 
 //RootReducer
 import  rootReducer from './reducers/rootReducer';
@@ -33,11 +29,12 @@ const initialState = {
 
 const loggerMiddleware = createLogger()
 
-//Store
-const store = createStore(rootReducer, initialState);
 
-//Routing History
-export const history = syncHistoryWithStore(browserHistory, store, applyMiddleware(thunkMiddleware, loggerMiddleware));
-
-export default store;
+export default function configureStore() {
+    return createStore(
+        rootReducer,
+        initialState,
+        applyMiddleware(thunkMiddleware, loggerMiddleware)
+    )
+};
 
