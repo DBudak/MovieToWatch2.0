@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import '../styles/genres.css';
 import MovieItem from './movieItem';
 import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 class MovieList extends Component{
 
