@@ -10,8 +10,9 @@ class Movies extends Component{
     constructor(props) {
         super(props);
     }
-    componentWillMount(){
+    componentDidMount(){
         console.log('in movies', this.props);
+        this.props.getAPIConfig();
         this.props.getGenres();        
     }
     getMovies(e){
