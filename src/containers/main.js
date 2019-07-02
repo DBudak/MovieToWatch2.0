@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getAPIConfig } from '../actions/actions';
@@ -7,31 +7,31 @@ import * as actionCreators from '../actions/actions';
 import { bindActionCreators } from 'redux';
 
 class Main extends Component {
-    constructor(props) {
-        super(props);
-      }
-    componentDidMount(){
-        this.props.dispatch(getAPIConfig());
-    }
-    render() {
-        return (
-            <div>
-                   <Movies />         
-            </div>
-        );
-    }    
+  constructor(props) {
+    super(props);
+  }
+  componentDidMount() {
+    this.props.dispatch(getAPIConfig());
+  }
+  render() {
+    return (
+      <div>
+        <Movies />
+      </div>
+    );
+  }
 }
 
-function mapStateToProps(state){
-    return {
-      genres : state.genres,
-      movies : state.movies,
-      config : state.config
-    }
+function mapStateToProps(state) {
+  return {
+    genres: state.genres,
+    movies: state.movies,
+    config: state.config
   }
+}
 
-  function mapDispatchToProps(dispatch){
-    return bindActionCreators(actionCreators,dispatch);
-  }
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch);
+}
 
-  export default connect(mapStateToProps, mapDispatchToProps)(Movies)
+export default connect(mapStateToProps, mapDispatchToProps)(Movies)

@@ -5,11 +5,9 @@
     background: #3a3a3a;
     padding: 5px 0px;
 }
-
 ul li {
     display: inline;
 }
-
 button.genre.button {
     margin: 10px;
     padding: 10px;
@@ -17,7 +15,6 @@ button.genre.button {
     color: white;
     border: 2px solid white;
 }
-
 button.genre.button.toggled{
     background: #F44336;
 }

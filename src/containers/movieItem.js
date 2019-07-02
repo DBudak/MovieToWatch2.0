@@ -1,23 +1,23 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import '../styles/genres.css';
 
-class MovieItem extends Component{
+class MovieItem extends Component {
 
 
-    clickHandler(e){
+    clickHandler(e) {
         console.log(e.target, 'was clicked');
-        this.props.setFeatured(this.props.movie);       
+        this.props.setFeatured(this.props.movie);
     }
 
-    render(){
+    render() {
         return (
-            <div className="movie-item" style={{backgroundImage: `url("${this.props.backdropUrl}")`}}
-            onClick={(e) => this.clickHandler(e)}>
+            <div className="movie-item" style={{ backgroundImage: `url("${this.props.backdropUrl}")` }}
+                onClick={(e) => this.clickHandler(e)}>
                 <div className="overlay">
-                        <div className="movie-title">
-                            {this.props.movie.title}
-                        </div>
-                </div>           
+                    <div className="movie-title">
+                        {this.props.movie.title}
+                    </div>
+                </div>
             </div>
         )
     }

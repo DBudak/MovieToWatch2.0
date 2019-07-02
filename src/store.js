@@ -1,34 +1,27 @@
-//Redux
 import { createStore, applyMiddleware } from 'redux';
+import rootReducer from './reducers/rootReducer';
+import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
 
-//RootReducer
-import  rootReducer from './reducers/rootReducer';
-
-//Middleware
-import thunkMiddleware from 'redux-thunk'
-import { createLogger } from 'redux-logger'
-
-//Initial State
 const initialState = {
-    genres:{
-        received : false,
-        data : [],
-        userChoice : []
+    genres: {
+        received: false,
+        data: [],
+        userChoice: []
     },
     movies: {
-        received : false,
-        noMoviesFound : false,
+        received: false,
+        noMoviesFound: false,
         data: [],
-        featuredMovie : {}
+        featuredMovie: {}
     },
-    config : {
-        received : false,
-        data : {}
+    config: {
+        received: false,
+        data: {}
     }
 };
 
-const loggerMiddleware = createLogger()
-
+const loggerMiddleware = createLogger();
 
 export default function configureStore() {
     return createStore(
