@@ -3,9 +3,7 @@ import GenreButton from './genreButton';
 import '../styles/genres.css';
 import 'bootstrap-grid-only/bootstrap.css';
 import MovieList from './movieList';
-import {
-    getGenres
-} from '../actions/actions';
+
 class Movies extends Component {
 
     constructor(props) {
